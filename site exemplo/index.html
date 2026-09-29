@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cafeteria Aroma</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f3ed;
+            color: #3e2723;
+        }
+
+        header {
+            background-color: #6f4e37;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        nav {
+            margin-top: 15px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        main {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .cafe {
+            width: 250px;
+            max-width: 100%;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+
+        .badge {
+            background-color: #d7a86e;
+            color: #3e2723;
+            padding: 6px 12px;
+            border-radius: 15px;
+            font-size: 14px;
+            display: inline-block;
+        }
+
+        .alerta {
+            background-color: #fff3cd;
+            border: 1px solid #ffe69c;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+
+        button {
+            background-color: #6f4e37;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            background-color: #4e342e;
+        }
+
+        .toast {
+            display: none;
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            background-color: #4caf50;
+            color: white;
+            padding: 15px 20px;
+            border-radius: 8px;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background-color: rgba(0, 0, 0, 0.5);
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-conteudo {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            max-width: 400px;
+            text-align: center;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>Cafeteria Aroma</h1>
+
+        <nav>
+            <a href="#">Início</a>
+            <a href="#">Sobre</a>
+            <a href="#">Cardápio</a>
+            <a href="#">Contato</a>
+        </nav>
+    </header>
+
+    <main>
+
+        <span class="badge">Novidade</span>
+
+        <h2>Bem-vindo à Cafeteria Aroma!</h2>
+
+        <p>
+            Cafés especiais, bolos e momentos especiais
+            para você aproveitar.
+        </p>
+
+        <div class="alerta">
+            ☕ Hoje temos café especial disponível!
+        </div>
+
+        <button onclick="mostrarToast()">
+            Fazer pedido
+        </button>
+
+        <button onclick="abrirModal()">
+            Ver informações
+        </button>
+
+        <div id="toast" class="toast">
+            Pedido realizado com sucesso!
+        </div>
+
+        <div id="modal" class="modal">
+            <div class="modal-conteudo">
+                <h2>Cafeteria Aroma</h2>
+                <p>Obrigado por visitar nossa cafeteria!</p>
+                <br>
+                <button onclick="fecharModal()">Fechar</button>
+            </div>
+        </div>
+
+    </main>
+
+    <footer>
+        © 2026 Cafeteria Aroma
+    </footer>
+
+    <script>
+        function mostrarToast() {
+            const toast = document.getElementById("toast");
+
+            toast.style.display = "block";
+
+            setTimeout(function() {
+                toast.style.display = "none";
+            }, 3000);
+        }
+
+        function abrirModal() {
+            document.getElementById("modal").style.display = "flex";
+        }
+
+        function fecharModal() {
+            document.getElementById("modal").style.display = "none";
+        }
+    </script>
+
+</body>
+</html>
